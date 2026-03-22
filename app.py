@@ -16,7 +16,7 @@ class Question:
     def check_answer(self, user_answer):
         return self.correct_option == user_answer
 
-# ==========================================
+# =========================================
 # REQUIREMENT: DATA STRUCTURES (QUEUE - FIFO) 
 # ==========================================
 class CBTQueue:
