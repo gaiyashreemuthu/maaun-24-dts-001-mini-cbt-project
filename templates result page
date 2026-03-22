@@ -6,13 +6,14 @@
     <style>
         body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
         .card { max-width: 400px; margin: 0 auto; padding: 30px; border: 1px solid #ccc; border-radius: 8px; background-color: #f9f9f9;}
-        .btn { padding: 10px 20px; font-size: 16px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px; display: inline-block; margin-top: 20px;}
+        .btn { padding: 10px 20px; font-size: 16px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 7px; display: inline-block; margin-top: 22px;}
+
     </style>
 </head>
 <body>
     <div class="card">
         <h2>Test Completed!</h2>
-        <h1>{{ score }} / {{ total }}</h1>
+        <h1>{{ score }} / {{ total }}</h1> 
         <p><strong>Time Submitted:</strong><br> {{ time }}</p>
         <a href="/" class="btn">Take Test Again</a>
     </div>
