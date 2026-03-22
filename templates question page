@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test in Progress</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 600px; margin: 50px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px;}
+        .btn { padding: 10px 15px; margin-top: 20px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+    <h2>Question:</h2>
+    <p><strong>{{ question.text }}</strong></p>
+    
+    <form method="POST" action="/test">
+        {% for option in question.options %}
+            <div>
+                <input type="radio" id="{{ option }}" name="option" value="{{ option }}" required>
+                <label for="{{ option }}">{{ option }}</label>
+            </div>
+            <br>
+        {% endfor %}
+        <button type="submit" class="btn">Submit Answer</button>
+    </form>
+</body>
+</html>
