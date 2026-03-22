@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mini CBT Engine</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        .btn { padding: 10px 20px; font-size: 16px; background-color: #007BFF; color: white; text-decoration: none; border-radius: 5px; }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Mini CBT Engine</h1>
+    <p>Test your knowledge on Python and Web Development.</p>
+    <br>
+    <a href="/start" class="btn">Start Test</a>
+</body>
+</html>
