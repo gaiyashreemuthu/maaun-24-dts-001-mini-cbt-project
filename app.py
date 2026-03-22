@@ -4,7 +4,7 @@ from datetime import datetime
 app = Flask(__name__)
 
 # ==========================================
-# REQUIREMENT: OBJECT-ORIENTED PROGRAMMING 
+# REQUIREMENT: OBJECT-ORIENTED PROGRAMMING
 # ==========================================
 class Question:
     def __init__(self, text, options, correct_option):
@@ -16,8 +16,8 @@ class Question:
     def check_answer(self, user_answer):
         return self.correct_option == user_answer
 
-# =========================================
-# REQUIREMENT: DATA STRUCTURES (QUEUE - FIFO) 
+# ==========================================
+# REQUIREMENT: DATA STRUCTURES (QUEUE - FIFO)
 # ==========================================
 class CBTQueue:
     def __init__(self):
@@ -45,25 +45,48 @@ def load_questions():
     global total_questions
     test_queue.items = [] # Reset queue
     
-    # Create instances of our Question class
+    # Create instances of our Question class with a mix of tech and business topics
     q1 = Question("What does OOP stand for?", 
                   ["Object-Oriented Programming", "Only Open Programs", "Out Of Print"], 
                   "Object-Oriented Programming")
+                  
     q2 = Question("Which Python framework are we using for this web app?", 
                   ["Django", "Flask", "FastAPI"], 
                   "Flask")
+                  
     q3 = Question("Which data structure uses First-In-First-Out (FIFO)?", 
                   ["Stack", "Queue", "Array"], 
                   "Queue")
+                  
+    q4 = Question("Which Python library is primarily used for data manipulation and analysis?", 
+                  ["Pandas", "Requests", "BeautifulSoup"], 
+                  "Pandas")
+                  
+    q5 = Question("What does SEO stand for in digital marketing and web development?", 
+                  ["Search Engine Optimization", "Site Engagement Output", "System Error Override"], 
+                  "Search Engine Optimization")
+                  
+    q6 = Question("In cost accounting, which of the following describes a 'fixed cost'?", 
+                  ["Changes with production volume", "Remains constant regardless of production", "Decreases as production increases"], 
+                  "Remains constant regardless of production")
+                  
+    q7 = Question("In contract law, what is an obligation imposed by law to prevent unjust enrichment?", 
+                  ["Bailment", "Quasi-contract", "Specific Maxim"], 
+                  "Quasi-contract")
     
-    # Add questions to the queue
+    # Add questions to the queue sequentially
     test_queue.enqueue(q1)
     test_queue.enqueue(q2)
     test_queue.enqueue(q3)
-    total_questions = 3
+    test_queue.enqueue(q4)
+    test_queue.enqueue(q5)
+    test_queue.enqueue(q6)
+    test_queue.enqueue(q7)
+    
+    total_questions = len(test_queue.items)
 
 # ==========================================
-# REQUIREMENT: THE WEB UI (FLASK ROUTES) 
+# REQUIREMENT: THE WEB UI (FLASK ROUTES)
 # ==========================================
 
 @app.route('/')
@@ -108,7 +131,7 @@ def test():
 @app.route('/result')
 def result():
     """Displays the final score and a timestamp."""
-    # REQUIREMENT: STANDARD API (DATETIME) 
+    # REQUIREMENT: STANDARD API (DATETIME)
     submit_time = datetime.now().strftime("%B %d, %Y at %I:%M %p")
     
     return render_template('result.html', score=score, total=total_questions, time=submit_time)
